@@ -1,0 +1,26 @@
+.anyClass {
+    height:370px;
+    overflow-y: scroll;
+  }
+  .search-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  .navbar
+{
+  background-color: white;
+    color: rgb(12, 11, 11);
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    padding: 1px 1px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.custom-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* This ensures that the container takes the full height */
+}

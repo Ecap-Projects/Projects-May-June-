@@ -1,0 +1,33 @@
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/Background.jpg') center center fixed;
+    background-size: cover;
+  }
+  
+  .login_box {
+    width: 30%;
+    height: 68%;
+    background-color:  rgba(1,32,93,0.6);
+    color:white;
+    border-radius: 10px;
+    box-shadow: 1px 4px 22px -8px #ffffff;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column; /* Adjusting the direction to column */
+    justify-content: center; /* Centering content vertically */
+    align-items: center; /* Centering content horizontally */
+    padding: 20px; /* Adding padding for better appearance */
+  }
+  
+  /* Add your existing styling for left, contact, button, etc. */
+  /* .left { */
+    /* background-color:rgba(1,32,93,0.6); */
+  /* } */
+  
+  button {
+    color:green;
+  }
+  

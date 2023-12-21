@@ -1,0 +1,71 @@
+<nav class="navbar">
+  <div class="container custom-center">
+      <a class="navbar-brand"> 
+        <u><h2>Employee Management System</h2></u>
+       </a>
+  </div>
+</nav>  
+<hr><hr>
+<nav class="navbar">
+  <div class="container">
+    <span class="d-flex">
+       <a class="navbar-brand-2"> 
+        <h3>Employee's List</h3>
+       </a> 
+    </span>  
+     <mat-form-field class="search-box">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+     </mat-form-field>
+  </div>
+</nav>  
+ <hr>
+
+ <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="id" >
+     <mat-header-cell *matHeaderCellDef mat-sort-header><b>Employee Id</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">{{ employee.id }}</mat-cell>
+   </ng-container>
+ 
+   <ng-container matColumnDef="name">
+     <mat-header-cell *matHeaderCellDef mat-sort-header><b>Name</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">{{ employee.name }}</mat-cell>
+   </ng-container>
+ 
+   <ng-container matColumnDef="contact">
+     <mat-header-cell *matHeaderCellDef mat-sort-header><b>Contact</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">{{ employee.contact }}</mat-cell>
+   </ng-container>
+ 
+   <ng-container matColumnDef="email">
+     <mat-header-cell *matHeaderCellDef mat-sort-header><b>Email Id</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">{{ employee.email }}</mat-cell>
+   </ng-container>
+ 
+   <ng-container matColumnDef="department">
+     <mat-header-cell *matHeaderCellDef mat-sort-header><b>Department</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">{{ employee.department }}</mat-cell>
+   </ng-container>
+ 
+   <ng-container matColumnDef="age">
+     <mat-header-cell *matHeaderCellDef mat-sort-header><b>Age</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">{{ employee.age }}</mat-cell>
+   </ng-container>
+ 
+   <ng-container matColumnDef="actions">
+     <mat-header-cell *matHeaderCellDef><b>Actions</b></mat-header-cell>
+     <mat-cell *matCellDef="let employee">
+       <!-- View Icon with Tooltip -->
+       <mat-icon (click)="employeeDetails(employee.id)" matTooltip="View">visibility</mat-icon>
+ 
+       <!-- Update Icon with Tooltip -->
+       <mat-icon (click)="updateEmployee(employee.id)" matTooltip="Update">edit</mat-icon>
+ 
+       <!-- Delete Icon with Tooltip -->
+       <mat-icon (click)="deleteEmployee(employee.id)" matTooltip="Delete">delete</mat-icon>
+     </mat-cell>
+   </ng-container>
+ 
+   <mat-header-row *matHeaderRowDef="['id', 'name', 'contact', 'email', 'department', 'age', 'actions']"></mat-header-row>
+   <mat-row *matRowDef="let row; columns: ['id', 'name', 'contact', 'email', 'department', 'age', 'actions']"></mat-row>
+ </mat-table>
+ 
